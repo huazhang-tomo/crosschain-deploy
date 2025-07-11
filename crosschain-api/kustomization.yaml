@@ -8,6 +8,7 @@ secretGenerator:
   - name: crosschain-api-config
     files:
       - config.prod.yaml
+      - config-override.prod.yaml
 
 labels:
   - pairs:

@@ -14,7 +14,7 @@ x-node: &node
   depends_on:
     - redis
   volumes:
-    - ./config.prod.yaml:/app/config.yaml
+    - ./config.prod.yaml:/app/config.prod.yaml
 
 services:
   redis:
