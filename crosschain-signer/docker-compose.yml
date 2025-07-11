@@ -35,33 +35,39 @@ services:
       - 3333:3333
     environment:
       START_OPTS: "start-signer"
+      NODE_ENV: "prod"
 
   crosschain-signer-task-base:
     <<: *node
     container_name: crosschain-signer-task-base
     environment:
       START_OPTS: "start-signer-task-base"
+      NODE_ENV: "prod"
 
   crosschain-signer-task-bsc:
     <<: *node
     container_name: crosschain-signer-task-bsc
     environment:
       START_OPTS: "start-signer-task-bsc"
+      NODE_ENV: "prod"
 
   crosschain-signer-task-solana:
     <<: *node
     container_name: crosschain-signer-task-solana
     environment:
       START_OPTS: "start-signer-task-solana"
+      NODE_ENV: "prod"
 
   crosschain-signer-task-ethereum:
     <<: *node
     container_name: crosschain-signer-task-ethereum
     environment:
       START_OPTS: "start-signer-task-ethereum"
+      NODE_ENV: "prod"
 
   crosschain-signer-task-tron:
     <<: *node
     container_name: crosschain-signer-task-tron
     environment:
       START_OPTS: "start-signer-task-tron"
+      NODE_ENV: "prod"

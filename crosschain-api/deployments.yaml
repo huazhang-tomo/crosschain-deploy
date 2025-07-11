@@ -34,6 +34,7 @@ spec:
               protocol: TCP
           environment:
             START_OPTS: "start"
+            NODE_ENV: "prod"
           resources:
             requests:
               cpu: "100m"

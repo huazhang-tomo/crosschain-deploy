@@ -33,33 +33,39 @@ services:
     container_name: crosschain-bot
     environment:
       START_OPTS: "start-bot"
+      NODE_ENV: "prod"
 
   task-base:
     <<: *node
     container_name: crosschain-task-base
     environment:
       START_OPTS: "start-task-base"
+      NODE_ENV: "prod"
 
   task-bsc:
     <<: *node
     container_name: crosschain-task-bsc
     environment:
       START_OPTS: "start-task-bsc"
+      NODE_ENV: "prod"
 
   task-solana:
     <<: *node
     container_name: crosschain-task-solana
     environment:
       START_OPTS: "start-task-solana"
+      NODE_ENV: "prod"
 
   task-ethereum:
     <<: *node
     container_name: crosschain-task-ethereum
     environment:
       START_OPTS: "start-task-ethereum"
+      NODE_ENV: "prod"
 
   task-tron:
     <<: *node
     container_name: crosschain-task-tron
     environment:
       START_OPTS: "start-task-tron"
+      NODE_ENV: "prod"
