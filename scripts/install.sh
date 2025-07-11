@@ -25,7 +25,8 @@ apt-get install -y \
     vim \
     unzip \
     zip \
-    jq
+    jq \
+    amazon-ecr-credential-helper
 
 ## 使用 aws 官方发布的 AWS CLI v2
 
