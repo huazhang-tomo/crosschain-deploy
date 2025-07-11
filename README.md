@@ -2,7 +2,7 @@
 
 ### create tables
 ```SQL
-CREATE USER new_user WITH PASSWORD 'NEW_Password';
+CREATE USER crosschain WITH PASSWORD 'NEW_Password';
 CREATE DATABASE cross_chain;
 -- switch to the new database
 \c cross_chain
