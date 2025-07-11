@@ -19,7 +19,7 @@ x-node: &node
 
 services:
   redis:
-    image: valkey/valkey:8-apline
+    image: valkey/valkey:8-alpine3.22
     restart: always
     command:
       - valkey-server
