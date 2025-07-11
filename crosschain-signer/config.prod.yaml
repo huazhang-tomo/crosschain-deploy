@@ -1,0 +1,499 @@
+server:
+  port: 3010
+
+database:
+  postgres_url: postgresql://postgres:root123com@3.101.61.59:5432/cross_chain?schema=public&connection_limit=20
+  redis_url: redis://:redis123com@172.31.21.117:6389
+  redis_ttl:
+    quote_cache: '30m'
+    native_token_price_cache: '1m'
+    onchain_ctx_cache: '15s'
+
+logging:
+  level: 'debug'
+
+secret:
+  jwt_public_key: 'LS0tLS1CRUdJTiBQVUJMSUMgS0VZLS0tLS0KTUlJQklqQU5CZ2txaGtpRzl3MEJBUUVGQUFPQ0FROEFNSUlCQ2dLQ0FRRUFzUldkcHMrWitaUmp0aUE1bDkrd042OVl3M2w4ejFFWWk1cFZybXh1cHNNSktGM1hQRkJuWVYxaVBEWExiSnpGQVZGc3ViSzZ6L2ZPSXh0c21uNWp4RHRqM3NwQ0Y5Uit1aG9VOXlRSEJ0ZDRyWVc2UXZBM3JFRjM0WFZHQkR4YnNnQy9idlQ2QzZkb1FEbWNkdjVQNURJRm41WE1JUlVONHA2anc0WjhtdmRKZEkzZ0haMlZNZ3lnZFVPODRxN3BnMGVsREJ6R2NkUVVCa29qRkNWSHR6bEJmODY5ZWIwaXBOME0vUGF1eDN5UUhlcndIOXZvbHBETElBUUo4VG1URTZnT3Y1OG82TlRZVUVEaHovcGtrL1ltQ0xKMGRURUxDTGMxMzVEMHMvUUI0VGlUTm1xK1hoR2hwOWtpaWFhR1NvUk9oMmU0QklrN2hzYVBwRnBmd1FJREFRQUIKLS0tLS1FTkQgUFVCTElDIEtFWS0tLS0t'
+  okx:
+    pass_pharse: 'Ankr@2024'
+    api_key: '8902a412-ca3b-40e0-bd3e-1da998324e9c'
+    secret_key: '59F3A97F8BF93A79A4EE701B8F6D2ADB'
+  coingecko:
+    api_key: 'CG-oKjn2xFxd9cKiuQKawwzRVax'
+  goplus:
+    api_key: 'Y9qoYRMUhslOR4NHnqu9'
+    api_secret: 'j2wGSAQrsib0pHPRSNyjjqa1S7lCRpqQ'
+
+chain:
+  ethereum:
+    chain_id: 1
+    chain_name: 'ethereum'
+    native_currency: 'ETH'
+    native_address:
+      - '0x0000000000000000000000000000000000000000'
+      - ''
+      - '0xeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee'
+    decimals: 18
+    rpc_url: 'https://eth-mainnet.g.alchemy.com/v2/DR7Jtd4NSYTtAY7Heme8ml-j6oBCZgGO'
+    go_plus: true
+  bsc:
+    chain_id: 56
+    chain_name: 'bsc'
+    native_currency: 'BNB'
+    native_address:
+      - '0x0000000000000000000000000000000000000000'
+      - ''
+      - '0xeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee'
+    decimals: 18
+    # rpc_url: 'https://rpc.ankr.com/bsc/ac79e83cf02a544dbb9b3f4c5d5478b2510b921e7d5739ded8791a932e8de0a6'
+    #    rpc_url: 'https://bnb-mainnet.g.alchemy.com/v2/DR7Jtd4NSYTtAY7Heme8ml-j6oBCZgGO'
+    rpc_url: 'https://frosty-wider-yard.bsc.quiknode.pro/76e255183930f9cc46e2639548d37af65083e559'
+    go_plus: true
+  arbitrum:
+    chain_id: 42161
+    chain_name: 'arbitrum'
+    native_currency: 'ETH'
+    native_address: '0x0000000000000000000000000000000000000000,,0xeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee'
+    decimals: 18
+    rpc_url: 'https://arb-mainnet.g.alchemy.com/v2/DR7Jtd4NSYTtAY7Heme8ml-j6oBCZgGO'
+    go_plus: true
+  base:
+    chain_id: 8453
+    chain_name: 'base'
+    native_currency: 'ETH'
+    native_address:
+      - '0x0000000000000000000000000000000000000000'
+      - ''
+      - '0xeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee'
+    decimals: 18
+    rpc_url: 'https://thrilling-magical-asphalt.base-mainnet.quiknode.pro/d5da5499732fcab56dadeeaf9fe17eaa16201408/'
+    go_plus: true
+  blast:
+    chain_id: 81457
+    chain_name: 'blast'
+    native_currency: 'ETH'
+    native_address:
+      - '0x0000000000000000000000000000000000000000'
+      - ''
+      - '0xeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee'
+    decimals: 18
+    rpc_url: 'https://rpc.blast.io'
+    go_plus: false
+  avalanche:
+    chain_id: 43114
+    chain_name: 'avalanche'
+    native_currency: 'AVAX'
+    native_address:
+      - '0x0000000000000000000000000000000000000000'
+      - ''
+      - '0xeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee'
+    decimals: 18
+    rpc_url: 'https://rpc.ankr.com/avalanche/c2d7e8a3db5dce62e202db3d28cca25e74da5028abbf20764e2961918ba34dfc'
+    go_plus: true
+  polygon:
+    chain_id: 137
+    chain_name: 'polygon'
+    native_currency: 'POL'
+    native_address:
+      - '0x0000000000000000000000000000000000000000'
+      - ''
+      - '0xeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee'
+    decimals: 18
+    rpc_url: 'https://rpc.ankr.com/polygon/c2d7e8a3db5dce62e202db3d28cca25e74da5028abbf20764e2961918ba34dfc'
+    go_plus: true
+  scroll:
+    chain_id: 534352
+    chain_name: 'scroll'
+    native_currency: 'ETH'
+    native_address:
+      - '0x0000000000000000000000000000000000000000'
+      - ''
+      - '0xeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee'
+    decimals: 18
+    rpc_url: 'https://rpc.ankr.com/scroll/c2d7e8a3db5dce62e202db3d28cca25e74da5028abbf20764e2961918ba34dfc'
+    go_plus: true
+  optimism:
+    chain_id: 10
+    chain_name: 'optimism'
+    native_currency: 'ETH'
+    native_address:
+      - '0x0000000000000000000000000000000000000000'
+      - ''
+      - '0xeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee'
+    decimals: 18
+    rpc_url: 'https://opt-mainnet.g.alchemy.com/v2/DR7Jtd4NSYTtAY7Heme8ml-j6oBCZgGO'
+    go_plus: true
+  linea:
+    chain_id: 59144
+    chain_name: 'linea'
+    native_currency: 'ETH'
+    native_address:
+      - '0x0000000000000000000000000000000000000000'
+      - ''
+      - '0xeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee'
+    decimals: 18
+    rpc_url: 'https://linea-mainnet.infura.io/v3/e42637ee1f664cad93e70bbf62196769'
+    go_plus: true
+  solana:
+    chain_id: 501
+    chain_name: 'solana'
+    native_currency: 'SOL'
+    native_address:
+      - 'So11111111111111111111111111111111111111112'
+      - ''
+    decimals: 9
+    rpc_url: 'https://practical-cosmological-meme.solana-mainnet.quiknode.pro/06261eba3f2e921d77444957ddb5c41140925813'
+    go_plus: true
+  ton:
+    chain_id: 1100
+    chain_name: 'ton'
+    native_currency: 'TON'
+    native_address:
+      - 'EQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'
+    decimals: 9
+    rpc_url: 'https://toncenter.com/api/v2/jsonRPC'
+    api_key: '1b312c91c3b691255130350a49ac5a0742454725f910756aff94dfe44858388e'
+    go_plus: false
+  sui:
+    chain_id: 784
+    chain_name: 'sui'
+    native_currency: 'SUI'
+    native_address:
+      - '0x2::sui::SUI'
+    decimals: 9
+    rpc_url: 'https://fullnode.mainnet.sui.io'
+    go_plus: false
+  tron:
+    chain_id: 195
+    chain_name: 'tron'
+    native_currency: 'TRX'
+    native_address:
+      - '0'
+      - ''
+    decimals: 6
+    rpc_url: 'https://api.trongrid.io'
+    api_key: '0687a825-1abd-4647-976f-ac8baab84d1e'
+    go_plus: true
+
+deployments:
+  uniswap:
+    ethereum:
+      UniswapV3Factory: '0x1F98431c8aD98523631AE4a59f267346ea31F984'
+      Permit2: '0x000000000022D473030F116dDEE9F6B43aC78BA3'
+      UniversalRouter: '0x3fC91A3afd70395Cd496C647d5a6CC9D4B2b7FAD'
+      UniswapV2Factory: '0x5C69bEe701ef814a2B6a3EDD4B1652CB9cc5aA6f'
+      UniswapV2Router02: '0x7a250d5630B4cF539739dF2C5dAcb4c659F2488D'
+    avalanche:
+      UniswapV3Factory: '0x740b1c1de25031C31FF4fC9A62f554A55cdC1baD'
+      Permit2: '0x000000000022D473030F116dDEE9F6B43aC78BA3'
+      UniversalRouter: '0x4Dae2f939ACf50408e13d58534Ff8c2776d45265'
+      UniswapV2Factory: '0x9e5A52f57b3038F1B8EeE45F28b3C1967e22799C'
+      UniswapV2Router02: '0x4752ba5dbc23f44d87826276bf6fd6b1c372ad24'
+    arbitrum:
+      UniswapV3Factory: '0x1F98431c8aD98523631AE4a59f267346ea31F984'
+      Permit2: '0x000000000022D473030F116dDEE9F6B43aC78BA3'
+      UniversalRouter: '0x5E325eDA8064b456f4781070C0738d849c824258'
+      UniswapV2Factory: '0xf1D7CC64Fb4452F05c498126312eBE29f30Fbcf9'
+      UniswapV2Router02: '0x4752ba5dbc23f44d87826276bf6fd6b1c372ad24'
+    bsc:
+      UniswapV3Factory: '0xdB1d10011AD0Ff90774D0C6Bb92e5C5c8b4461F7'
+      Permit2: '0x000000000022D473030F116dDEE9F6B43aC78BA3'
+      UniversalRouter: '0x4Dae2f939ACf50408e13d58534Ff8c2776d45265'
+      UniswapV2Factory: '0x8909Dc15e40173Ff4699343b6eB8132c65e18eC6'
+      UniswapV2Router02: '0x4752ba5dbc23f44d87826276bf6fd6b1c372ad24'
+    base:
+      UniswapV3Factory: '0x33128a8fC17869897dcE68Ed026d694621f6FDfD'
+      Permit2: '0x000000000022D473030F116dDEE9F6B43aC78BA3'
+      UniversalRouter: '0x3fC91A3afd70395Cd496C647d5a6CC9D4B2b7FAD'
+      UniswapV2Factory: '0x8909Dc15e40173Ff4699343b6eB8132c65e18eC6'
+      UniswapV2Router02: '0x4752ba5dbc23f44d87826276bf6fd6b1c372ad24'
+    blast:
+      UniswapV3Factory: '0x792edAdE80af5fC680d96a2eD80A44247D2Cf6Fd'
+      Permit2: '0x000000000022d473030f116ddee9f6b43ac78ba3'
+      UniversalRouter: '0x643770E279d5D0733F21d6DC03A8efbABf3255B4'
+      UniswapV2Factory: '0x5C346464d33F90bABaf70dB6388507CC889C1070'
+      UniswapV2Router02: '0xBB66Eb1c5e875933D44DAe661dbD80e5D9B03035'
+    optimism:
+      UniswapV3Factory: '0x1F98431c8aD98523631AE4a59f267346ea31F984'
+      Permit2: '0x000000000022D473030F116dDEE9F6B43aC78BA3'
+      UniversalRouter: '0xCb1355ff08Ab38bBCE60111F1bb2B784bE25D7e8'
+      UniswapV2Factory: '0x0c3c1c532F1e39EdF36BE9Fe0bE1410313E074Bf'
+      UniswapV2Router02: '0x4A7b5Da61326A6379179b40d00F57E5bbDC962c2'
+    polygon:
+      UniswapV3Factory: '0x1F98431c8aD98523631AE4a59f267346ea31F984'
+      Permit2: '0x000000000022D473030F116dDEE9F6B43aC78BA3'
+      UniversalRouter: '0xec7BE89e9d109e7e3Fec59c222CF297125FEFda2'
+      UniswapV2Factory: '0x9e5A52f57b3038F1B8EeE45F28b3C1967e22799C'
+      UniswapV2Router02: '0xedf6066a2b290C185783862C7F4776A2C8077AD1'
+  omniswap:
+    ethereum:
+      ProxyRouter: '0x942F1B93E416913687242552CF0eD93592925284'
+      InitialBlock: 22323713
+      WrappedToken:
+        address: '0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2'
+        decimals: 18
+        symbol: 'WETH'
+      StableToken:
+        address: '0xdAC17F958D2ee523a2206206994597C13D831ec7'
+        decimals: 6
+        symbol: 'USDT'
+      StableTokens:
+        - address: '0xdAC17F958D2ee523a2206206994597C13D831ec7'
+          decimals: 6
+          symbol: 'USDT'
+        - address: '0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48'
+          decimals: 6
+          symbol: 'USDC'
+        - address: '0x8d0D000Ee44948FC98c9B98A4FA4921476f08B0d'
+          decimals: 18
+          symbol: 'USD1'
+      Family: 'evm-compat'
+      WarningThreshold: 1
+      Enable: true
+    avalanche:
+      ProxyRouter: ''
+      InitialBlock: 0
+      WrappedToken:
+        address: '0xB31f66AA3C1e785363F0875A1B74E27b85FD66c7'
+        decimals: 18
+        symbol: 'WAVAX'
+      StableToken:
+        address: ''
+        decimals: 6
+        symbol: 'USDC'
+      StableTokens:
+        - address: ''
+          decimals: 6
+          symbol: 'USDC'
+      Family: 'evm-compat'
+      WarningThreshold: 1000
+      Enable: false
+    arbitrum:
+      ProxyRouter: '0x942F1B93E416913687242552CF0eD93592925284'
+      InitialBlock: 328991267
+      WrappedToken:
+        address: '0x82aF49447D8a07e3bd95BD0d56f35241523fBab1'
+        decimals: 18
+        symbol: 'WETH'
+      StableToken:
+        address: '0xFd086bC7CD5C481DCC9C85ebE478A1C0b69FCbb9'
+        decimals: 6
+        symbol: 'USDT'
+      StableTokens:
+        - address: '0xFd086bC7CD5C481DCC9C85ebE478A1C0b69FCbb9'
+          decimals: 6
+          symbol: 'USDT'
+        - address: '0xaf88d065e77c8cC2239327C5EDb3A432268e5831'
+          decimals: 6
+          symbol: 'USDC'
+      Family: 'evm-compat'
+      WarningThreshold: 1000
+      Enable: false
+    bsc:
+      ProxyRouter: '0x3f6196e776cf2a4366a089Ea1F88062137B8a2Fb'
+      InitialBlock: 48577485
+      WrappedToken:
+        address: '0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c'
+        decimals: 18
+        symbol: 'WBNB'
+      StableToken:
+        address: '0x55d398326f99059fF775485246999027B3197955'
+        decimals: 18
+        symbol: 'USDT'
+      StableTokens:
+        - address: '0x55d398326f99059fF775485246999027B3197955'
+          decimals: 18
+          symbol: 'USDT'
+        - address: '0x8AC76a51cc950d9822D68b83fE1Ad97B32Cd580d'
+          decimals: 18
+          symbol: 'USDC'
+        - address: '0x8d0D000Ee44948FC98c9B98A4FA4921476f08B0d'
+          decimals: 18
+          symbol: 'USD1'
+      Family: 'evm-compat'
+      WarningThreshold: 1
+      Enable: True
+    base:
+      ProxyRouter: '0xb640D76Fd7154EdE93676637065b64C4109d9bAc'
+      InitialBlock: 29262587
+      WrappedToken:
+        address: '0x4200000000000000000000000000000000000006'
+        decimals: 18
+        symbol: 'WETH'
+      StableToken:
+        address: '0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913'
+        decimals: 6
+        symbol: 'USDC'
+      StableTokens:
+        - address: '0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913'
+          decimals: 6
+          symbol: 'USDC'
+      Family: 'evm-compat'
+      WarningThreshold: 1000
+      Enable: True
+    blast:
+      ProxyRouter: ''
+      InitialBlock: 0
+      WrappedToken:
+        address: '0x4300000000000000000000000000000000000004'
+        decimals: 18
+        symbol: 'WETH'
+      StableToken:
+        address: ''
+        decimals: 6
+        symbol: 'USDC'
+      StableTokens:
+        - address: ''
+          decimals: 6
+          symbol: 'USDC'
+      Family: 'evm-compat'
+      WarningThreshold: 1000
+      Enable: false
+    optimism:
+      ProxyRouter: '0xD9C9f77A2439F851aC75e541cBedD83e0dCE67C8'
+      InitialBlock: 134858169
+      WrappedToken:
+        address: '0x4200000000000000000000000000000000000006'
+        decimals: 18
+        symbol: 'WETH'
+      StableToken:
+        address: '0x94b008aA00579c1307B0EF2c499aD98a8ce58e58'
+        decimals: 6
+        symbol: 'USDT'
+      StableTokens:
+        - address: '0x94b008aA00579c1307B0EF2c499aD98a8ce58e58'
+          decimals: 6
+          symbol: 'USDT'
+        - address: '0x0b2C639c533813f4Aa9D7837CAf62653d097Ff85'
+          decimals: 6
+          symbol: 'USDC'
+      Family: 'evm-compat'
+      WarningThreshold: 1000
+      Enable: false
+    polygon:
+      ProxyRouter: ''
+      WrappedToken:
+        address: '0x0d500B1d8E8eF31E21C99d1Db9A6444d3ADf1270'
+        decimals: 18
+        symbol: 'WMATIC'
+      StableToken:
+        address: ''
+        decimals: 6
+        symbol: 'USDC'
+      StableTokens:
+        - address: ''
+          decimals: 6
+          symbol: 'USDC'
+      Family: 'evm-compat'
+      WarningThreshold: 1000
+      Enable: false
+    ton:
+      ProxyRouter: 'EQAnHGTgIpQ2Mn7mTG9NrpvLt8bI6vJ8by89y0goEZly8Ydm'
+      StableToken:
+        address: 'EQCxE6mUtQJKFnGfaROTKOt1lZbDiiX1kCixRv7Nw2Id_sDs'
+        decimals: 6
+        symbol: 'USDT'
+      StableTokens:
+        - address: 'EQCxE6mUtQJKFnGfaROTKOt1lZbDiiX1kCixRv7Nw2Id_sDs'
+          decimals: 6
+          symbol: 'USDT'
+      Family: 'ton'
+      WarningThreshold: 1000
+      Enable: false
+    solana:
+      ProxyRouter: 'J6FM1Dif9eJ8NAT3Q2aRRTyMjv2oJFHvaZzGjgayhhyq'
+      StableToken:
+        address: 'Es9vMFrzaCERmJfrF4H2FYD4KCoNkY11McCe8BenwNYB'
+        decimals: 6
+        symbol: 'USDT'
+      StableTokens:
+        - address: 'Es9vMFrzaCERmJfrF4H2FYD4KCoNkY11McCe8BenwNYB'
+          decimals: 6
+          symbol: 'USDT'
+        - address: 'EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v'
+          decimals: 6
+          symbol: 'USDC'
+      Family: 'sol'
+      WarningThreshold: 1
+      Enable: true
+      CustomConfigs:
+        configPDASeed: 'configure'
+        tokenStatusPDASeed: 'token'
+        vaultPDASeed: 'vault'
+        withdrawStatusPDASeed: 'withdraw'
+    sui:
+      ProxyRouter: '0xc9dfd256862b0b1aa578968d8c0a3a9d37437a82475b3efc079227abe7051cb3'
+      StableToken:
+        address: '0xdba34672e30cb065b1f93e3ab55318768fd6fef66c15942c9f7cb846e2f900e7::usdc::USDC'
+        decimals: 6
+        symbol: 'USDC'
+      StableTokens:
+        - address: '0xdba34672e30cb065b1f93e3ab55318768fd6fef66c15942c9f7cb846e2f900e7::usdc::USDC'
+          decimals: 6
+          symbol: 'USDC'
+      Family: 'sui'
+      WarningThreshold: 1000
+      Enable: true
+      CustomConfigs:
+        objectId: '0xd26f642f4798831346811c6c9684c951470eda42af0136a3a10896ec0c5a9245'
+    tron:
+      ProxyRouter: 'TN9uJTcotSUv5vPpFTLxBiAoiFqvhXgX7L'
+      InitialBlock: 71145311
+      StableToken:
+        address: 'TR7NHqjeKQxGTCi8q8ZY4pL8otSzgjLj6t'
+        decimals: 6
+        symbol: 'USDT'
+      StableTokens:
+        - address: 'TR7NHqjeKQxGTCi8q8ZY4pL8otSzgjLj6t'
+          decimals: 6
+          symbol: 'USDT'
+      Family: 'tron'
+      WarningThreshold: 1000
+      Enable: true
+
+quoteConfig:
+  rpc:
+    uniswap:
+      endpoint: 'https://trading-api-labs.interface.gateway.uniswap.org/v1/quote'
+      method: 'POST'
+      timeout: 10_000
+      headers:
+        'Content-Type': 'application/json'
+        'X-Api-Key': 'JoyCGj29tT4pymvhaGciK4r1aIPvqW6W53xT1fwo'
+        'x-request-source': 'uniswap-web'
+        'x-universal-router-version': '1.2'
+    omniswap:
+      endpoint: 'https://fkbs2eni85.execute-api.us-west-2.amazonaws.com/prod/quote'
+      method: 'GET'
+      timeout: 10_000
+      headers:
+  swapGaslimit:
+    ethereum: 100000
+    avalanche: 100000
+    arbitrum: 100000
+    bsc: 100000
+    base: 100000
+    blast: 100000
+    optimism: 100000
+    polygon: 100000
+    ton: 15000000
+    solana: 100000
+    sui: 5000
+    tron: 170000
+  swapFeeRatePercentage: 0.6
+  swapCheckMaxLimitUSD: 2000
+  swapCheckHighestCostRatePercentage: 50
+
+swapConfig:
+  deadlineSeconds: 3600
+
+handlerConfig:
+  seed: ''
+
+signerConfig:
+  seed: ''
+
+botConfig:
+  enable: true
+  token: '7977078685:AAGwfoHnXDdFw0ZE8tT8bJan991dwCb8T_U'
+  chatId: '-1002597583083'
