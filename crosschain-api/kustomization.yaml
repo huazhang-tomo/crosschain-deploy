@@ -1,0 +1,20 @@
+resources:
+  - deployments.yaml
+  - services.yaml
+
+namespace: crosschain-api
+
+secretGenerator:
+  - name: crosschain-api-config
+    files:
+      - config.prod.yaml
+
+labels:
+  - pairs:
+      app.kubernetes.io/instance: crosschain-api
+      app.kubernetes.io/name: crosschain-api
+    includeSelectors: true
+
+images:
+  - name: 864899841273.dkr.ecr.us-east-1.amazonaws.com/tomo-service-stage/actions-ci-simple
+    newTag: dev-20250624-0920-a8f6495

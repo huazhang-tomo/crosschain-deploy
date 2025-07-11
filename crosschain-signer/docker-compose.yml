@@ -1,0 +1,66 @@
+
+
+# "start-signer"
+# "start-signer-task-base"
+# "start-signer-task-bsc"
+# "start-signer-task-solana"
+# "start-signer-task-ethereum"
+# "start-signer-task-tron"
+
+# node template
+x-node: &node
+  image: 133735975201.dkr.ecr.us-east-1.amazonaws.com/dev/fanstech/crosschain-core:dev-v2-20250711-0608-be90684@sha256:5ae3841cb7e08a9ad02fdb0d6e06b61f64d7c6825a57f4232ac75fb9ced335f2
+  restart: always
+  depends_on:
+    - redis
+  volumes:
+    - ./config.prod.yaml:/app/config.yaml
+  environment:
+    - NODE_ENV=production
+
+services:
+  redis:
+    image: valkey/valkey:8-apline
+    restart: always
+    command:
+      - valkey-server
+      - --requirepass
+      - ${REDIS_PASSWORD}
+    ports:
+      - "6379:6379"
+
+  crosschain-signer:
+    <<: *node
+    container_name: crosschain-signer
+    command:
+      - start-signer
+
+  crosschain-signer-task-base:
+    <<: *node
+    container_name: crosschain-signer-task-base
+    command:
+      - start-signer-task-base
+
+  crosschain-signer-task-bsc:
+    <<: *node
+    container_name: crosschain-signer-task-bsc
+    command:
+      - start-signer-task-bsc
+
+  crosschain-signer-task-solana:
+    <<: *node
+    container_name: crosschain-signer-task-solana
+    command:
+      - start-signer-task-solana
+
+  crosschain-signer-task-ethereum:
+    <<: *node
+    container_name: crosschain-signer-task-ethereum
+    command:
+      - start-signer-task-ethereum
+
+  crosschain-signer-task-tron:
+    <<: *node
+    container_name: crosschain-signer-task-tron
+    command:
+      - start-signer-task-tron

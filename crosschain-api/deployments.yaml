@@ -1,0 +1,61 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: crosschain-api
+spec:
+  minReadySeconds: 30
+  replicas: 3
+  revisionHistoryLimit: 3
+  selector:
+    matchLabels:
+      environment: prod
+      app.kubernetes.io/name: crosschain-api
+      app.kubernetes.io/instance: crosschain-api
+  strategy:
+    rollingUpdate:
+      maxSurge: 25%
+      maxUnavailable: 25%
+    type: RollingUpdate
+  template:
+    metadata:
+      labels:
+        environment: prod
+        app.kubernetes.io/name: crosschain-api
+        app.kubernetes.io/instance: crosschain-api
+    spec:
+      containers:
+        - image: 133735975201.dkr.ecr.us-east-1.amazonaws.com/dev/fanstech/crosschain-core:latest
+          imagePullPolicy: IfNotPresent
+          name: pod
+          ports:
+            - containerPort: 3010
+              name: http
+              protocol: TCP
+          resources:
+            requests:
+              cpu: "100m"
+              memory: "256Mi"
+            limits:
+              cpu: "1.0"
+              memory: "4Gi"
+          volumeMounts:
+            - name: tmp
+              mountPath: /tmp
+            - name: config
+              mountPath: /app/config.prod.yaml
+              subPath: config.prod.yaml
+            - name: config
+              mountPath: /app/config-override.prod.yaml
+              subPath: config-override.prod.yaml
+          command:
+            - start
+      terminationGracePeriodSeconds: 30
+      restartPolicy: Always
+      volumes:
+        - emptyDir:
+            sizeLimit: 500Mi
+          name: tmp
+        - name: crosschain-api-config
+          secret:
+            secretName: crosschain-api-config
