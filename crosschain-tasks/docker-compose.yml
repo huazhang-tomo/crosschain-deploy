@@ -15,8 +15,6 @@ x-node: &node
     - redis
   volumes:
     - ./config.prod.yaml:/app/config.yaml
-  environment:
-    - NODE_ENV=production
 
 services:
   redis:
@@ -32,35 +30,35 @@ services:
   bot:
     <<: *node
     container_name: crosschain-bot
-    command:
-      - start-bot
+    environment:
+      START_OPTS: "start-bot"
 
   task-base:
     <<: *node
     container_name: crosschain-task-base
-    command:
-      - start-task-base
+    environment:
+      START_OPTS: "start-task-base"
 
   task-bsc:
     <<: *node
     container_name: crosschain-task-bsc
-    command:
-      - start-task-bsc
+    environment:
+      START_OPTS: "start-task-bsc"
 
   task-solana:
     <<: *node
     container_name: crosschain-task-solana
-    command:
-      - start-task-solana
+    environment:
+      START_OPTS: "start-task-solana"
 
   task-ethereum:
     <<: *node
     container_name: crosschain-task-ethereum
-    command:
-      - start-task-ethereum
+    environment:
+      START_OPTS: "start-task-ethereum"
 
   task-tron:
     <<: *node
     container_name: crosschain-task-tron
-    command:
-      - start-task-tron
+    environment:
+      START_OPTS: "start-task-tron"

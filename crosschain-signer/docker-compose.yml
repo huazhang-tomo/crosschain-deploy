@@ -14,9 +14,7 @@ x-node: &node
   depends_on:
     - redis
   volumes:
-    - ./config.prod.yaml:/app/config.yaml
-  environment:
-    - NODE_ENV=production
+    - ./config.prod.yaml:/app/config.prod.yaml
 
 services:
   redis:
@@ -32,35 +30,35 @@ services:
   crosschain-signer:
     <<: *node
     container_name: crosschain-signer
-    command:
-      - start-signer
+    environment:
+      START_OPTS: "start-signer"
 
   crosschain-signer-task-base:
     <<: *node
     container_name: crosschain-signer-task-base
-    command:
-      - start-signer-task-base
+    environment:
+      START_OPTS: "start-signer-task-base"
 
   crosschain-signer-task-bsc:
     <<: *node
     container_name: crosschain-signer-task-bsc
-    command:
-      - start-signer-task-bsc
+    environment:
+      START_OPTS: "start-signer-task-bsc"
 
   crosschain-signer-task-solana:
     <<: *node
     container_name: crosschain-signer-task-solana
-    command:
-      - start-signer-task-solana
+    environment:
+      START_OPTS: "start-signer-task-solana"
 
   crosschain-signer-task-ethereum:
     <<: *node
     container_name: crosschain-signer-task-ethereum
-    command:
-      - start-signer-task-ethereum
+    environment:
+      START_OPTS: "start-signer-task-ethereum"
 
   crosschain-signer-task-tron:
     <<: *node
     container_name: crosschain-signer-task-tron
-    command:
-      - start-signer-task-tron
+    environment:
+      START_OPTS: "start-signer-task-tron"

@@ -32,6 +32,8 @@ spec:
             - containerPort: 3010
               name: http
               protocol: TCP
+          environment:
+            START_OPTS: "start"
           resources:
             requests:
               cpu: "100m"
@@ -48,8 +50,6 @@ spec:
             - name: config
               mountPath: /app/config-override.prod.yaml
               subPath: config-override.prod.yaml
-          command:
-            - start
       terminationGracePeriodSeconds: 30
       restartPolicy: Always
       volumes:
