@@ -30,6 +30,8 @@ services:
   crosschain-signer:
     <<: *node
     container_name: crosschain-signer
+    ports:
+      - 3333:3333
     environment:
       START_OPTS: "start-signer"
 
