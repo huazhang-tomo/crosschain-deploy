@@ -1,11 +1,10 @@
 
 
-# "start-bot"
-# "start-task-base"
-# "start-task-bsc"
-# "start-task-solana"
-# "start-task-ethereum"
-# "start-task-tron"
+# "start-signer-task-base"
+# "start-signer-task-bsc"
+# "start-signer-task-solana"
+# "start-signer-task-ethereum"
+# "start-signer-task-tron"
 
 # node template
 x-node: &node
@@ -28,44 +27,37 @@ services:
     ports:
       - "6379:6379"
 
-  bot:
-    <<: *node
-    container_name: crosschain-bot
-    environment:
-      START_OPTS: "start-bot"
-      NODE_ENV: "prod"
-
   task-base:
     <<: *node
     container_name: crosschain-task-base
     environment:
-      START_OPTS: "start-task-base"
+      START_OPTS: "start-signer-task-base"
       NODE_ENV: "prod"
 
   task-bsc:
     <<: *node
     container_name: crosschain-task-bsc
     environment:
-      START_OPTS: "start-task-bsc"
+      START_OPTS: "start-signer-task-bsc"
       NODE_ENV: "prod"
 
   task-solana:
     <<: *node
     container_name: crosschain-task-solana
     environment:
-      START_OPTS: "start-task-solana"
+      START_OPTS: "start-signer-task-solana"
       NODE_ENV: "prod"
 
   task-ethereum:
     <<: *node
     container_name: crosschain-task-ethereum
     environment:
-      START_OPTS: "start-task-ethereum"
+      START_OPTS: "start-signer-task-ethereum"
       NODE_ENV: "prod"
 
   task-tron:
     <<: *node
     container_name: crosschain-task-tron
     environment:
-      START_OPTS: "start-task-tron"
+      START_OPTS: "start-signer-task-tron"
       NODE_ENV: "prod"
