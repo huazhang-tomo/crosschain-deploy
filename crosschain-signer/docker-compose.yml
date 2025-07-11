@@ -15,6 +15,7 @@ x-node: &node
     - redis
   volumes:
     - ./config.prod.yaml:/app/config.prod.yaml
+    - ./config-override.prod.yaml:config-override.prod.yaml
 
 services:
   redis:
