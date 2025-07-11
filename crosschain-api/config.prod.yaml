@@ -2,8 +2,8 @@ server:
   port: 3010
 
 database:
-  postgres_url: postgresql://postgres:root123com@3.101.61.59:5432/cross_chain?schema=public&connection_limit=20
-  redis_url: redis://:redis123com@172.31.21.117:6389
+  postgres_url: postgresql://postgres:postgres@127.0.0.1:5432/cross_chain?schema=public&connection_limit=20
+  redis_url: redis://redis:6389
   redis_ttl:
     quote_cache: '30m'
     native_token_price_cache: '1m'
