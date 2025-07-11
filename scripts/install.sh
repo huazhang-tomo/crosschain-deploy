@@ -232,8 +232,9 @@ cat << EOF > /etc/fluent-bit/fluent-bit.conf
     total_file_size 100M
     upload_timeout  10m
     use_put_object  true
-    s3_key_format   /${aws_log_group}/%Y/%m/%d/%H/%M/%S/\$TAG/\$UUID.gz
-    store_dir       /var/lib/fluent-bit/s3
+    send_content_md5 true
+    s3_key_format    /${aws_log_group}/%Y/%m/%d/%H/%M/%S/\$TAG/\$UUID.gz
+    store_dir        /var/lib/fluent-bit/s3
 EOF
 
 # 启动 fluent-bit 服务
