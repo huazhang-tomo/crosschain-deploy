@@ -4,10 +4,6 @@ server:
 database:
   postgres_url: postgresql://postgres:postgres@127.0.0.1:5432/cross_chain?schema=public&connection_limit=20
   redis_url: redis://redis:6389
-  redis_ttl:
-    quote_cache: '30m'
-    native_token_price_cache: '1m'
-    onchain_ctx_cache: '15s'
 
 logging:
   level: 'debug'
@@ -538,3 +534,8 @@ botConfig:
   enable: true
   token: '7977078685:AAGwfoHnXDdFw0ZE8tT8bJan991dwCb8T_U'
   chatId: '-1002597583083'
+
+cacheConfig:
+  quote_cache: '30m'
+  native_token_price_cache: '1m'
+  onchain_ctx_cache: '15s'
