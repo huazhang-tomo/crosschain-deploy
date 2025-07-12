@@ -32,9 +32,11 @@ spec:
             - containerPort: 3010
               name: http
               protocol: TCP
-          environment:
-            START_OPTS: "start"
-            NODE_ENV: "prod"
+          env:
+            - name: START_OPTS
+              value: "start"
+            - name: NODE_ENV
+              value: "prod"
           resources:
             requests:
               cpu: "100m"
@@ -45,10 +47,10 @@ spec:
           volumeMounts:
             - name: tmp
               mountPath: /tmp
-            - name: config
+            - name: crosschain-api-config
               mountPath: /app/config.prod.yaml
               subPath: config.prod.yaml
-            - name: config
+            - name: crosschain-api-config
               mountPath: /app/config-override.prod.yaml
               subPath: config-override.prod.yaml
       terminationGracePeriodSeconds: 30
