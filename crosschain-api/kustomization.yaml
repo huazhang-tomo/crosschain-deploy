@@ -18,4 +18,4 @@ labels:
 
 images:
   - name: 133735975201.dkr.ecr.us-east-1.amazonaws.com/dev/fanstech/crosschain-core
-    newTag: dev-v2-20250713-1157-1329440@sha256:f3c980a2f2a3c0064760d9b57c97bc519cb3f20bdd09d1e7dd4465994639288c
+    newTag: dev-v2-20250714-0312-34b696e@sha256:748adea34e6f1792d93b6fedd1c7b44db67dec9615f045d84aa4b33c92e7da89
