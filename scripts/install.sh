@@ -203,22 +203,22 @@ cat << EOF > /etc/fluent-bit/fluent-bit.conf
 
 [INPUT]
     Name           systemd
-    Tag            host.sshd
+    Tag            systemd.sshd
     Systemd_Filter _SYSTEMD_UNIT=sshd.service
     DB             /var/lib/fluent-bit/sshd.db
     Mem_Buf_Limit  5MB
 
 [INPUT]
-    Name                tail
-    Tag                 host.*
-    Path                /var/lib/docker/containers/*/*.log
-    multiline.parser    docker, cri
-    DB                  /var/lib/fluent-bit/flb_container.db
-    Mem_Buf_Limit       50MB
+    Name              tail
+    Tag               docker.*
+    Path              /var/lib/docker/containers/*/*-json.log
+    multiline.parser  docker,cri
+    DB                /var/lib/fluent-bit/flb_container.db
+    Mem_Buf_Limit     50MB
 
 [OUTPUT]
     Name              cloudwatch_logs
-    Match             host.*
+    Match             *
     region            ${aws_region}
     log_group_name    /aws/ec2/${aws_log_group}
     log_stream_prefix ${aws_log_stream_prefix}
@@ -226,7 +226,7 @@ cat << EOF > /etc/fluent-bit/fluent-bit.conf
 
 [OUTPUT]
     Name            s3
-    Match           host.*
+    Match           *
     bucket          ${aws_s3_bucket}
     region          ${aws_region}
     total_file_size 100M
