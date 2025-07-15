@@ -445,6 +445,9 @@ deployments:
         - address: 'TR7NHqjeKQxGTCi8q8ZY4pL8otSzgjLj6t'
           decimals: 6
           symbol: 'USDT'
+        - address: 'TPFqcBAaaUMCSVRCqPaQ9QnzKhmuoLR6Rc'
+          decimals: 18
+          symbol: 'USD1'
       Family: 'tron'
       WarningThreshold: 10
       Enable: true
