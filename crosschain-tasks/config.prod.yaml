@@ -537,6 +537,10 @@ botConfig:
   enable: true
   token: '7977078685:AAGwfoHnXDdFw0ZE8tT8bJan991dwCb8T_U'
   chatId: '-1002597583083'
+  topicSuccessId: 6
+  topicFailId: 14
+  topicReportId: 18
+  topicTimeoutId: 10
 
 cacheConfig:
   quote_cache: '30m'
