@@ -435,8 +435,8 @@ deployments:
       CustomConfigs:
         objectId: '0xb8146829f146cf5abc9d7fab398df206ebc5fe76555be73c189a065e80fd3df7'
     tron:
-      ProxyRouter: 'TSwZ7o6e6rx8z4QcDcNKpk7j9zsnU1egkP'
-      InitialBlock: 73854140
+      ProxyRouter: 'TWkup5jUYM9nB8XaKBdnAjuZXHGLMmcpep'
+      InitialBlock: 74020625
       StableToken:
         address: 'TR7NHqjeKQxGTCi8q8ZY4pL8otSzgjLj6t'
         decimals: 6
