@@ -126,7 +126,7 @@ tee /etc/docker/daemon.json << EOF
 	"log-opts": {
 		"max-size": "10m",
 		"max-file": "3",
-		"tag": "{{.ImageName}}|{{.Name}}|{{.ID}}"
+		"tag": "{{.Name}}"
 	}
 }
 EOF
