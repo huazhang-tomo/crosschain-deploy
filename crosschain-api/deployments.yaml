@@ -27,6 +27,8 @@ spec:
       containers:
         - image: 133735975201.dkr.ecr.us-east-1.amazonaws.com/dev/fanstech/crosschain-core:latest
           imagePullPolicy: IfNotPresent
+          securityContext:
+            readOnlyRootFilesystem: true
           name: pod
           ports:
             - containerPort: 3010
@@ -56,9 +58,9 @@ spec:
       terminationGracePeriodSeconds: 30
       restartPolicy: Always
       volumes:
-        - emptyDir:
+        - name: tmp
+          emptyDir:
             sizeLimit: 500Mi
-          name: tmp
         - name: crosschain-api-config
           secret:
             secretName: crosschain-api-config
