@@ -1,5 +1,6 @@
 server:
   port: 3010
+  agentPort: 3020
 
 database:
   postgres_url: postgresql://postgres:postgres@127.0.0.1:5432/cross_chain?schema=public&connection_limit=20
@@ -512,7 +513,9 @@ quoteConfig:
       transfer: 110000
 
   swapFeeRatePercentage: 0.6
+  swapFeeMaxAmountUSD: 10000
   swapCheckMaxLimitUSD: 2000
+  transferCheckMaxLimitUSD: 20000
   swapCheckHighestCostRatePercentage: 50
 
 swapConfig:
