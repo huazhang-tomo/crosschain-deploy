@@ -8,7 +8,7 @@
 
 # node template
 x-node: &node
-  image: 133735975201.dkr.ecr.us-east-1.amazonaws.com/prod/fanstech/crosschain-core:main-20250723-0643-ecb2a59@sha256:963a56014b5c3cb8943617b6d23ad99d8837bac833c631b016bbc480f7d17295
+  image: 133735975201.dkr.ecr.us-east-1.amazonaws.com/prod/fanstech/crosschain-core:main-20250812-1324-0789df2@sha256:d3c09ef0f5d256db1879795f0287689848bbc7cbaf7d5fe27ed8b8094fedcf90
   restart: always
   depends_on:
     - redis
