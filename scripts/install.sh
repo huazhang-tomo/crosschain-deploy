@@ -225,15 +225,16 @@ cat << EOF > /etc/fluent-bit/fluent-bit.conf
     auto_create_group true
 
 [OUTPUT]
-    Name            s3
-    Match           *
-    bucket          ${aws_s3_bucket}
-    region          ${aws_region}
-    total_file_size 100M
-    upload_timeout  10m
-    use_put_object  true
+    Name             s3
+    Match            *
+    bucket           ${aws_s3_bucket}
+    region           ${aws_region}
+    total_file_size  100M
+    upload_timeout   10m
+    use_put_object   true
     send_content_md5 true
-    s3_key_format    /${aws_log_group}/%Y/%m/%d/%H/%M/%S/\$TAG/\$UUID.gz
+    compression      gzip
+    s3_key_format    /${aws_log_group}/%Y-%m-%d/%H-%M/\$UUID.gz
     store_dir        /var/lib/fluent-bit/s3
 EOF
 
