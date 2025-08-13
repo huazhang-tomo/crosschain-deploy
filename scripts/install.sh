@@ -234,7 +234,7 @@ cat << EOF > /etc/fluent-bit/fluent-bit.conf
     use_put_object   true
     send_content_md5 true
     compression      gzip
-    s3_key_format    /${aws_log_group}/%Y-%m-%d/%H-%M/\$UUID.gz
+    s3_key_format    /${aws_log_group}/\$TAG/%Y-%m-%d/%H-%M/\$UUID.gz
     store_dir        /var/lib/fluent-bit/s3
 EOF
 
