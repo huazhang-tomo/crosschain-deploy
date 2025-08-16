@@ -247,6 +247,7 @@ deployments:
       Family: 'evm-compat'
       WarningThreshold: 1
       Enable: true
+      ProxyCount: 1
     avalanche:
       ProxyRouter: ''
       InitialBlock: 0
@@ -523,8 +524,6 @@ swapConfig:
 
 handlerConfig:
   seed: ''
-  count:
-    ethereum: 3
 
 signerConfig:
   signers:
