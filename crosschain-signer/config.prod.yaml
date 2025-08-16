@@ -523,16 +523,21 @@ swapConfig:
 
 handlerConfig:
   seed: ''
+  count:
+    ethereum: 3
 
 signerConfig:
   signers:
     - address: ''
+      solanaAddress: ''
       rpc: 'http://localhost:3333'
       index: 0
     - address: ''
+      solanaAddress: ''
       rpc: 'http://localhost:3334'
       index: 1
     - address: ''
+      solanaAddress: ''
       rpc: 'http://localhost:3335'
       index: 2
 
@@ -549,3 +554,6 @@ cacheConfig:
   quote_cache: '30m'
   native_token_price_cache: '1m'
   onchain_ctx_cache: '15s'
+
+refund:
+  large: 5
