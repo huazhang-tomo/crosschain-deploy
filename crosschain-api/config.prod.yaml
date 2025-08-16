@@ -527,17 +527,17 @@ handlerConfig:
 
 signerConfig:
   signers:
-    - address: ''
-      solanaAddress: ''
-      rpc: 'http://localhost:3333'
+    - address: '0x1ea23e45bf1d1956be64e0ae33fd7a9546971cbc'
+      solanaAddress: '2aUBsNHqrTwjVDV9n9vsyZM8J8XTr1ZVymCQ8KXL5woU'
+      rpc: ''
       index: 0
-    - address: ''
-      solanaAddress: ''
-      rpc: 'http://localhost:3334'
+    - address: '0xda54725581a1db0a7586218896eacf66a9e82cda'
+      solanaAddress: 'ANHMeBrFYTNgi8XX1MJwbifwhrXExrVrWMjWWV3UG6ou'
+      rpc: ''
       index: 1
-    - address: ''
+    - address: '0xda54725581a1db0a7586218896eacf66a9e82cda'
       solanaAddress: ''
-      rpc: 'http://localhost:3335'
+      rpc: ''
       index: 2
 
 botConfig:
