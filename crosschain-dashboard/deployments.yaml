@@ -42,10 +42,10 @@ spec:
         volumeMounts:
           - name: tmp
             mountPath: /tmp
-          - name: crosschain-api-config
+          - name: crosschain-dashboard-config
             mountPath: /app/config.prod.yaml
             subPath: config.prod.yaml
-          - name: crosschain-api-config
+          - name: crosschain-dashboard-config
             mountPath: /app/config-override.prod.yaml
             subPath: config-override.prod.yaml
       terminationGracePeriodSeconds: 10
@@ -54,6 +54,6 @@ spec:
         - name: tmp
           emptyDir:
             sizeLimit: 500Mi
-        - name: crosschain-api-config
+        - name: crosschain-dashboard-config
           secret:
-            secretName: crosschain-api-config
+            secretName: crosschain-dashboard-config
