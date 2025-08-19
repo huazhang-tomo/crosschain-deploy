@@ -15,6 +15,20 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
+  name: crosschain-data-agent
+spec:
+  ports:
+    - port: 3020
+      protocol: TCP
+      targetPort: http
+  selector:
+    environment: prod
+    app.kubernetes.io/name: crosschain-data-agent
+    app.kubernetes.io/instance: crosschain-data-agent
+---
+apiVersion: v1
+kind: Service
+metadata:
   name: crosschain-monitor
 spec:
   ports:
