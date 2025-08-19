@@ -1,6 +1,6 @@
 server:
   port: 5010
-  agentUrl: http://crosschain-data-agent.crosschain-api.svc.cluster.local
+  agentUrl: http://crosschain-data-agent.crosschain-api.svc.cluster.local:3020
 
 database:
   postgres_url: postgresql://dashboard_user:AAAAAAAAAA@localhost:5433/cross_chain_dashboard?schema=public&connection_limit=20
