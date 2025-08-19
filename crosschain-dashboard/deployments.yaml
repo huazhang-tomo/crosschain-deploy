@@ -9,7 +9,7 @@ spec:
     matchLabels:
       environment: prod
       app.kubernetes.io/name: crosschain-dashboard
-      app.kubernetes.io/instance: ccrosschain-dashboard
+      app.kubernetes.io/instance: crosschain-dashboard
   serviceName: crosschain-dashboard
   replicas: 1
   template:
