@@ -1,0 +1,15 @@
+resources:
+  - deployments.yaml
+  - services.yaml
+
+namespace: crosschain-dashboard
+
+secretGenerator:
+  - name: crosschain-dashboard-config
+    files:
+      - config.prod.yaml
+      - config-override.prod.yaml
+
+images:
+  - name: 133735975201.dkr.ecr.us-east-1.amazonaws.com/prod/fanstech/bridge-dashboard
+    newTag: main-20250819-0930-c306278@sha256:de3557e2764774c6b85adf927cfec6c75f1714c9a21491d97386ef370dc8e0ad

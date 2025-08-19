@@ -142,7 +142,7 @@ spec:
       environment: prod
       app.kubernetes.io/name: crosschain-data-agent
       app.kubernetes.io/instance: crosschain-data-agent
-  serviceName: data-agent
+  serviceName: crosschain-data-agent
   replicas: 1
   template:
     metadata:

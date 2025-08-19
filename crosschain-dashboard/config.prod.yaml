@@ -1,0 +1,25 @@
+server:
+  port: 5010
+  agentUrl: http://crosschain-data-agent.crosschain-api.svc.cluster.local
+
+database:
+  postgres_url: postgresql://dashboard_user:AAAAAAAAAA@localhost:5433/cross_chain_dashboard?schema=public&connection_limit=20
+
+logging:
+  level: 'info'
+
+secret:
+  jwt_public_key: ""
+  jwt_private_key: ""
+
+oauth2:
+  google_client_id: '479465761311-5da6b2ic7io7odr9jnrldai20046vk4t.apps.googleusercontent.com'
+
+jwt:
+  duration: 7200000
+
+admin:
+  email: juno@tomo.inc
+
+refund:
+  small: 5
