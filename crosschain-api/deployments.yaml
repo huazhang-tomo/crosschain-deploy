@@ -86,7 +86,7 @@ spec:
     metadata:
       annotations:
         prometheus.io/path: /metrics/
-        prometheus.io/port: "3010"
+        prometheus.io/port: "3030"
         prometheus.io/scrape: "true"
       labels:
         environment: prod
