@@ -33,7 +33,7 @@ spec:
           imagePullPolicy: IfNotPresent
           securityContext:
             readOnlyRootFilesystem: true
-          name: pod
+          name: api
           ports:
             - containerPort: 3010
               name: http
@@ -94,7 +94,7 @@ spec:
         app.kubernetes.io/instance: crosschain-monitor
     spec:
       containers:
-      - name: myapp
+      - name: monitor
         image: 133735975201.dkr.ecr.us-east-1.amazonaws.com/prod/fanstech/crosschain-core:latest
         ports:
         - containerPort: 3030
