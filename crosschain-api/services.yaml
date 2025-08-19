@@ -11,3 +11,17 @@ spec:
     environment: prod
     app.kubernetes.io/name: crosschain-api
     app.kubernetes.io/instance: crosschain-api
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: crosschain-monitor
+spec:
+  ports:
+    - port: 3030
+      protocol: TCP
+      targetPort: http
+  selector:
+    environment: prod
+    app.kubernetes.io/name: crosschain-monitor
+    app.kubernetes.io/instance: crosschain-monitor

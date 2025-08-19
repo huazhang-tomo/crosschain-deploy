@@ -19,6 +19,10 @@ spec:
     type: RollingUpdate
   template:
     metadata:
+      annotations:
+        prometheus.io/path: /metrics/
+        prometheus.io/port: "3010"
+        prometheus.io/scrape: "true"
       labels:
         environment: prod
         app.kubernetes.io/name: crosschain-api
@@ -56,6 +60,68 @@ spec:
               mountPath: /app/config-override.prod.yaml
               subPath: config-override.prod.yaml
       terminationGracePeriodSeconds: 30
+      restartPolicy: Always
+      volumes:
+        - name: tmp
+          emptyDir:
+            sizeLimit: 500Mi
+        - name: crosschain-api-config
+          secret:
+            secretName: crosschain-api-config
+---
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: crosschain-monitor
+spec:
+  minReadySeconds: 10
+  selector:
+    matchLabels:
+      environment: prod
+      app.kubernetes.io/name: crosschain-monitor
+      app.kubernetes.io/instance: crosschain-monitor
+  serviceName: crosschain-monitor
+  replicas: 1
+  template:
+    metadata:
+      annotations:
+        prometheus.io/path: /metrics/
+        prometheus.io/port: "3010"
+        prometheus.io/scrape: "true"
+      labels:
+        environment: prod
+        app.kubernetes.io/name: crosschain-monitor
+        app.kubernetes.io/instance: crosschain-monitor
+    spec:
+      containers:
+      - name: myapp
+        image: 133735975201.dkr.ecr.us-east-1.amazonaws.com/prod/fanstech/crosschain-core:latest
+        ports:
+        - containerPort: 3030
+          name: http
+          protocol: TCP      
+        resources:
+          requests:
+            cpu: "500m"
+            memory: "256Mi"
+          limits:
+            cpu: "1.0"
+            memory: "1Gi"
+        env:
+          - name: START_OPTS
+            value: "start-monitor"
+          - name: NODE_ENV
+            value: "prod"
+        volumeMounts:
+          - name: tmp
+            mountPath: /tmp
+          - name: crosschain-api-config
+            mountPath: /app/config.prod.yaml
+            subPath: config.prod.yaml
+          - name: crosschain-api-config
+            mountPath: /app/config-override.prod.yaml
+            subPath: config-override.prod.yaml
+      terminationGracePeriodSeconds: 10
       restartPolicy: Always
       volumes:
         - name: tmp

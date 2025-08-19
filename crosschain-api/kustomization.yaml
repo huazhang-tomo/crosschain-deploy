@@ -10,12 +10,6 @@ secretGenerator:
       - config.prod.yaml
       - config-override.prod.yaml
 
-labels:
-  - pairs:
-      app.kubernetes.io/instance: crosschain-api
-      app.kubernetes.io/name: crosschain-api
-    includeSelectors: true
-
 images:
   - name: 133735975201.dkr.ecr.us-east-1.amazonaws.com/prod/fanstech/crosschain-core
     newTag: main-20250816-0347-502fb80@sha256:e69c557ae6ec907fe4238cdd215fd9cecebb65ced9c10d890cccc13c70043d29
