@@ -23,7 +23,7 @@ spec:
       - name: bridge-dashboard
         image: 133735975201.dkr.ecr.us-east-1.amazonaws.com/prod/fanstech/bridge-dashboard:latest
         ports:
-        - containerPort: 3020
+        - containerPort: 5010
           name: http
           protocol: TCP      
         resources:
