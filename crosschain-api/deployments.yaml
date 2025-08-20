@@ -103,10 +103,10 @@ spec:
         resources:
           requests:
             cpu: "500m"
-            memory: "256Mi"
+            memory: "1Gi"
           limits:
             cpu: "1.0"
-            memory: "1Gi"
+            memory: "4Gi"
         env:
           - name: START_OPTS
             value: "start-monitor"
