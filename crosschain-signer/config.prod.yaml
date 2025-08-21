@@ -552,7 +552,7 @@ botConfig:
 cacheConfig:
   quote_cache: '30m'
   native_token_price_cache: '1m'
-  onchain_ctx_cache: '15s'
+  onchain_ctx_cache: '1m'
 
 refund:
   large: 5
