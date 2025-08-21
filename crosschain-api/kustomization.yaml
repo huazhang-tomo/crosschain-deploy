@@ -12,4 +12,4 @@ secretGenerator:
 
 images:
   - name: 133735975201.dkr.ecr.us-east-1.amazonaws.com/prod/fanstech/crosschain-core
-    newTag: main-20250819-0941-3f727b5@sha256:95b1b463d15aaa827c667791fa54feed7cc42d91490b273dc9b3b976196948b5
+    newTag: main-20250821-0339-a9ce3f8@sha256:60aa497fb3097139306220973f551ee9cea616a5789c0d5cd60886fec9d2b70e
