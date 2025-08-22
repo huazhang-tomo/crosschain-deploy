@@ -10,7 +10,7 @@ logging:
   level: 'error'
 
 secret:
-  jwt_public_key: 'LS0tLS1CRUdJTiBQVUJMSUMgS0VZLS0tLS0KTUlJQklqQU5CZ2txaGtpRzl3MEJBUUVGQUFPQ0FROEFNSUlCQ2dLQ0FRRUFvQ0tOMTJUajAzUXhsWFdTVWlXNgpML0JiYlRHOFhIUEs3VzV5cXBQY2h1L3JqcmVDRXNuWDl5cTV2UDlEL01RK1hIOTFJZGJkWE5LeVY2L1B0Nnp5CnI2TEFVcThuazNuWjRMNC9kb1grWXRya2FPQnhDaXhvd0Q1azMvblVuT1hCbjFzcmwwbDlPRXdEeS9IRkdFczUKMGZMU09DWTNHcXJmR0E5bitON2hkM0RTaFpZYm5xdHNRTzQzR0lkdS9zV3VDY2ZDVzM4c2lmOTV1UThUVkdwTgpiRzN5R0RSVmRNcXhVVW91SFlmb2lPTlBMMFo5NW1IaEx0c1ZsSlVpdmFlN0tWeEVKK0ZXT2tGSU5jOEpwUFVxCkRFUm54R2JWWTJUcllOZUpDbTBBL2VZNUYvdzJ4Qjd4SUF1RGNJVno5MktZUGxmdVdTczdRTUxNcHk0dDdNYVMKc3dJREFRQUIKLS0tLS1FTkQgUFVCTElDIEtFWS0tLS0tCg=='
+  jwt_public_key: 'MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEA0WDOoUF05/V++ZW/3RSzVFS4uyBepMgQDOXXKPWOhLY67sc/9e+4AoZolo3LtkaMz7XghV6lf72iQCZYCZ6HcNarGaUhb+gXd7sOf7ANkGB5QPvjbWFZuAGBJ4vJP4QYt3klkqBa/kXHIAPK9zL322h8EI8GkXQUWYYxVwTZCFhOugRZgd6VmjkRncY0Da6QyuwtC5PDukPe1td4g32BcDA5oQgUfXGpptHCFBfDIUK1XjdtRWsjVH6DyuEF6ZwHbo1bJCwOltXt9W1cdnERLSGfri9vsHqk0YQe3OhknoBlzspQvfDvnWBtJNrAYjsrU09B9eBMJQ7EaiJQ3QUu3wIDAQAB'
   okx:
     pass_pharse: 'Ankr@2024'
     api_key: '8902a412-ca3b-40e0-bd3e-1da998324e9c'
@@ -471,7 +471,7 @@ quoteConfig:
       timeout: 10_000
       headers:
     tomoswap:
-      endpoint: 'https://swap-dev.tomo.services'
+      endpoint: 'http://swap-consult-service-pre.swap-consult-service:8089'
       method: 'GET'
       timeout: 10_000
       headers:
