@@ -31,7 +31,7 @@ chain:
       - ''
       - '0xeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee'
     decimals: 18
-    rpc_url: 'https://wallet.tomo.inc/rpc/v1/eth'
+    rpc_url: 'https://wallet.tomo.inc/rpc/alchemyf9e01990b77d4d48978d5088906e20d6/rpc/v1/eth'
     go_plus: true
   bsc:
     chain_id: 56
@@ -42,7 +42,7 @@ chain:
       - ''
       - '0xeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee'
     decimals: 18
-    rpc_url: 'https://wallet.tomo.inc/rpc/v1/bsc'
+    rpc_url: 'https://wallet.tomo.inc/rpc/alchemyf9e01990b77d4d48978d5088906e20d6/rpc/v1/bsc'
     go_plus: true
   arbitrum:
     chain_id: 42161
@@ -50,7 +50,7 @@ chain:
     native_currency: 'ETH'
     native_address: '0x0000000000000000000000000000000000000000,,0xeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee'
     decimals: 18
-    rpc_url: 'https://wallet.tomo.inc/rpc/v1/arbitrum_one'
+    rpc_url: 'https://wallet.tomo.inc/rpc/alchemyf9e01990b77d4d48978d5088906e20d6/rpc/v1/arbitrum_one'
     go_plus: true
   base:
     chain_id: 8453
@@ -61,7 +61,7 @@ chain:
       - ''
       - '0xeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee'
     decimals: 18
-    rpc_url: 'https://wallet.tomo.inc/rpc/v1/base'
+    rpc_url: 'https://wallet.tomo.inc/rpc/alchemyf9e01990b77d4d48978d5088906e20d6/rpc/v1/base'
     go_plus: true
   blast:
     chain_id: 81457
@@ -72,7 +72,7 @@ chain:
       - ''
       - '0xeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee'
     decimals: 18
-    rpc_url: 'https://wallet.tomo.inc/rpc/v1/blast'
+    rpc_url: 'https://wallet.tomo.inc/rpc/alchemyf9e01990b77d4d48978d5088906e20d6/rpc/v1/blast'
     go_plus: false
   avalanche:
     chain_id: 43114
@@ -83,7 +83,7 @@ chain:
       - ''
       - '0xeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee'
     decimals: 18
-    rpc_url: 'https://wallet.tomo.inc/rpc/v1/avalanche'
+    rpc_url: 'https://wallet.tomo.inc/rpc/alchemyf9e01990b77d4d48978d5088906e20d6/rpc/v1/avalanche'
     go_plus: true
   polygon:
     chain_id: 137
@@ -94,7 +94,7 @@ chain:
       - ''
       - '0xeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee'
     decimals: 18
-    rpc_url: 'https://wallet.tomo.inc/rpc/v1/polygon'
+    rpc_url: 'https://wallet.tomo.inc/rpc/alchemyf9e01990b77d4d48978d5088906e20d6/rpc/v1/polygon'
     go_plus: true
   scroll:
     chain_id: 534352
@@ -105,7 +105,7 @@ chain:
       - ''
       - '0xeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee'
     decimals: 18
-    rpc_url: 'https://wallet.tomo.inc/rpc/v1/scroll'
+    rpc_url: 'https://wallet.tomo.inc/rpc/alchemyf9e01990b77d4d48978d5088906e20d6/rpc/v1/scroll'
     go_plus: false
   optimism:
     chain_id: 10
@@ -116,7 +116,7 @@ chain:
       - ''
       - '0xeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee'
     decimals: 18
-    rpc_url: 'https://wallet.tomo.inc/rpc/v1/optimism'
+    rpc_url: 'https://wallet.tomo.inc/rpc/alchemyf9e01990b77d4d48978d5088906e20d6/rpc/v1/optimism'
     go_plus: true
   linea:
     chain_id: 59144
@@ -127,7 +127,7 @@ chain:
       - ''
       - '0xeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee'
     decimals: 18
-    rpc_url: 'https://wallet.tomo.inc/rpc/v1/linea'
+    rpc_url: 'https://wallet.tomo.inc/rpc/alchemyf9e01990b77d4d48978d5088906e20d6/rpc/v1/linea'
     go_plus: true
   solana:
     chain_id: 501
@@ -137,7 +137,7 @@ chain:
       - 'So11111111111111111111111111111111111111112'
       - ''
     decimals: 9
-    rpc_url: 'https://wallet.tomo.inc/rpc/v1/solana'
+    rpc_url: 'https://wallet.tomo.inc/rpc/alchemyf9e01990b77d4d48978d5088906e20d6/rpc/v1/solana'
     go_plus: true
     create_account_fee: 0.0021
   ton:
@@ -147,7 +147,7 @@ chain:
     native_address:
       - 'EQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'
     decimals: 9
-    rpc_url: 'https://wallet.tomo.inc/rpc/v1/ton'
+    rpc_url: 'https://wallet.tomo.inc/rpc/alchemyf9e01990b77d4d48978d5088906e20d6/rpc/v1/ton'
     api_key: '1b312c91c3b691255130350a49ac5a0742454725f910756aff94dfe44858388e'
     go_plus: false
   sui:
@@ -157,7 +157,7 @@ chain:
     native_address:
       - '0x2::sui::SUI'
     decimals: 9
-    rpc_url: 'https://wallet.tomo.inc/rpc/v1/sui'
+    rpc_url: 'https://wallet.tomo.inc/rpc/alchemyf9e01990b77d4d48978d5088906e20d6/rpc/v1/sui'
     go_plus: false
   tron:
     chain_id: 195
@@ -167,10 +167,12 @@ chain:
       - '0'
       - ''
     decimals: 6
-    rpc_url: 'https://wallet.tomo.inc/rpc/v1/tron_grid'
+    rpc_url: 'https://wallet.tomo.inc/rpc/alchemyf9e01990b77d4d48978d5088906e20d6/rpc/v1/tron'
     api_key: '0687a825-1abd-4647-976f-ac8baab84d1e'
     go_plus: true
     create_account_fee: 15
+    custom_configs:
+      tron_grid_rpc_url: 'https://wallet.tomo.inc/rpc/alchemyf9e01990b77d4d48978d5088906e20d6/rpc/v1/tron_grid'
 
 deployments:
   uniswap:
@@ -552,6 +554,7 @@ botConfig:
 cacheConfig:
   quote_cache: '30m'
   native_token_price_cache: '1m'
+  stable_token_balance_cache: '10s'
   onchain_ctx_cache: '1m'
 
 refund:

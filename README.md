@@ -14,7 +14,7 @@ GRANT ALL PRIVILEGES ON SCHEMA public TO crosschain;
 
 ```bash
 $ cd crosschain-tasks
-$ sudo docker run --rm -it --entrypoint bash 133735975201.dkr.ecr.us-east-1.amazonaws.com/prod/fanstech/crosschain-core:main-20250822-0741-a438beb@sha256:151ed98c6501ffe4411b9fcee9bbbb8e840c087aef35aa08f8743baef73b440d
+$ sudo docker run --rm -it --entrypoint bash 133735975201.dkr.ecr.us-east-1.amazonaws.com/prod/fanstech/crosschain-core:main-20250824-0520-c553123@sha256:b99f44fc08179a01ac2a683892856eccd99ce6f51bfac338ce96d621551d3f55
 $ export DATABASE_URL="postgresql://XXXXX:XXXXXXX@XXXXXXXXXXXX.us-east-1.rds.amazonaws.com:5432/cross_chain?schema=public&connection_limit=20"
 $ npx prisma migrate deploy
 ```
