@@ -3,7 +3,7 @@ server:
   agentPort: 3020
 
 database:
-  postgres_url: postgresql://postgres:postgres@127.0.0.1:5432/cross_chain?schema=public&connection_limit=20
+  postgres_url: postgresql://postgres:postgre123@swap-rds-instance-1.cm7kugiqyl7b.us-east-1.rds.amazonaws.com:5432/cross_chain?schema=public&connection_limit=20
   redis_url: redis://redis:6389
 
 logging:
